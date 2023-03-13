@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Suhagan/Projects/Project - The Bank/Project - The Bank/Project - The Bank.csproj",
+      "projectUniqueName": "/Users/Suhagan/Projects/Project - The Bank/Project_Bank_ATM_system/Project - The Bank/Project - The Bank.csproj",
       "projectName": "Project - The Bank",
-      "projectPath": "/Users/Suhagan/Projects/Project - The Bank/Project - The Bank/Project - The Bank.csproj",
+      "projectPath": "/Users/Suhagan/Projects/Project - The Bank/Project_Bank_ATM_system/Project - The Bank/Project - The Bank.csproj",
       "packagesPath": "/Users/Suhagan/.nuget/packages/",
-      "outputPath": "/Users/Suhagan/Projects/Project - The Bank/Project - The Bank/obj/",
+      "outputPath": "/Users/Suhagan/Projects/Project - The Bank/Project_Bank_ATM_system/Project - The Bank/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Suhagan/.nuget/NuGet/NuGet.Config"
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

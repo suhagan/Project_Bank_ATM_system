@@ -44,24 +44,7 @@ namespace Project___The_Bank
             AccountType = accType;
             CurrencyType = currencyType;
             PinCode = pinCode;
-
-            /*if (initialBalance > 0)
-                MakeDeposit(initialBalance, DateTime.Now, "Initial balance"); // making a transaction for initaial balance.
-            */
-
-
         }
-
-        /*public void MakeDeposit(double amount, DateTime date, string note)
-        {
-            if (amount <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
-            }
-            // add a transaction
-            var deposit = new Transaction(amount, date, note);
-            AllTransactions.Add(deposit);
-        }*/
 
         public void WithdrawMoney(double withdrawamount, DateTime date, string note)
         {

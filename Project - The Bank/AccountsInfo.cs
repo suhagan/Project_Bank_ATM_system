@@ -8,7 +8,6 @@ namespace Project___The_Bank
         public string AccountNumber { get; }
         public AccountType AccountType { get; set; }
         public int UsersId { get; set; }
-        public string PinCode { get; set; }
         public CurrencyType CurrencyType { get; set; }
 
        
@@ -34,7 +33,7 @@ namespace Project___The_Bank
 
 
 
-        public AccountsInfo(int usersId, double initialBalance, AccountType accType, string pinCode, CurrencyType currencyType)
+        public AccountsInfo(int usersId, double initialBalance, AccountType accType, CurrencyType currencyType)
         {
             AccountNumber = InitialAccountNumber.ToString();
             InitialAccountNumber++;
@@ -42,9 +41,7 @@ namespace Project___The_Bank
             UsersId = usersId;
             AccountType = accType;
             CurrencyType = currencyType;
-            PinCode = pinCode;
-            //AccountBalance = initialBalance;
-
+            
             if (initialBalance >= 0)
                 MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
         }

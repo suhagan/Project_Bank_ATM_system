@@ -87,10 +87,10 @@ namespace Project___The_Bank;
                             // Using a while loop to allow logged in clients to access this menu repeatedly according to their operations and need..
                             while (menu)
                             {
-                                Console.WriteLine("\n\tSelect your options: ");
-                                Console.WriteLine("\n\t[1] To See your Accounts Info and Balances.");
-                                Console.WriteLine("\n\t[2] To Transfer between Accounts");
-                                Console.WriteLine("\n\t[3] To Withdraw money");
+                                Console.WriteLine("\n\tChoose your desired operation: ");
+                                Console.WriteLine("\n\t[1] See your Accounts Info and Balances.");
+                                Console.WriteLine("\n\t[2] Transfer between Accounts");
+                                Console.WriteLine("\n\t[3] Withdraw money");
                                 Console.WriteLine("\n\t[4] Log out");
 
                                 Int32.TryParse(Console.ReadLine(), out int yourOption);
@@ -112,7 +112,7 @@ namespace Project___The_Bank;
                                     }
                                     if (count == 0)
                                     {
-                                        Console.WriteLine("\n\tPress Enter to return to the option menu.");
+                                        Console.WriteLine("\n\tPress Enter to return to the operations menu.");
                                         Console.ReadKey();
                                     }
                                     break;
@@ -152,7 +152,7 @@ namespace Project___The_Bank;
 
                                                 Console.WriteLine($"Acc/No: {SearchItem.AccountHolders[transferFrom - 1].AccountNumber} \tAcc/Balance: {SearchItem.AccountHolders[transferFrom - 1].AccountBalance} {SearchItem.AccountHolders[transferFrom - 1].CurrencyType}");
                                                 Console.WriteLine($"Acc/No: {SearchItem.AccountHolders[transferTo - 1].AccountNumber} \tAcc/Balance: {SearchItem.AccountHolders[transferTo - 1].AccountBalance} {SearchItem.AccountHolders[transferTo - 1].CurrencyType}");
-                                                Console.WriteLine("Press Enter to return to option menu.");
+                                                Console.WriteLine("Press Enter to return to the operations menu.");
                                                 Console.ReadKey();
                                            }
                                         }
@@ -168,7 +168,7 @@ namespace Project___The_Bank;
                                     if (count1 == 1)
                                             {
                                                 Console.WriteLine("\n\tYou do not have more than one account to transfer.");
-                                                Console.WriteLine("\n\tPress Enter to return to the option menu.");
+                                                Console.WriteLine("\n\tPress Enter to return to the operations menu.");
                                                 Console.ReadKey();
                                             }
                                     break;
@@ -195,21 +195,21 @@ namespace Project___The_Bank;
                                                 Console.WriteLine($"{amount} SEK has withdrawn from Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber}");
 
                                                 Console.WriteLine($"Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber} \tAcc/Balance: {SearchItem.AccountHolders[withdrawFrom - 1].AccountBalance} {SearchItem.AccountHolders[withdrawFrom - 1].CurrencyType}");
-                                                Console.WriteLine("Press Enter to return to option menu.");
+                                                Console.WriteLine("Press Enter to return to the operations menu.");
                                                 Console.ReadKey();
                                             }
 
                                             if (amount < 0)
                                             {
                                                 Console.WriteLine("Withdraw amount cannot be negative.");
-                                                Console.WriteLine("Press Enter to return to option menu.");
+                                                Console.WriteLine("Press Enter to return to the operations menu.");
                                                 Console.ReadKey();
                                             }
 
                                             if (amount == 0)
                                             {
                                                 Console.WriteLine("No amount to withdraw.");
-                                                Console.WriteLine("Press Enter to return to option menu.");
+                                                Console.WriteLine("Press Enter to return to the operations menu.");
                                                 Console.ReadKey();
                                             }
                                         }
@@ -240,7 +240,7 @@ namespace Project___The_Bank;
                             {
                                 Console.WriteLine("\n\tLog in unsuccessfull! Either username or password doesn't match.");
                                 Console.WriteLine("\n\tPlease enter correct username and password to log in.");
-                                Console.WriteLine($"\n\tRemember, you have only {leftAttempts} attempts left. Best of luck.");
+                                Console.WriteLine($"\n\tRemember, you have only {leftAttempts-1} attempts left. Best of luck.");
                                 Console.WriteLine("\n\tIf you fail all three (3) attempts, your account will be on authentication hold for 3 minutes. Thanks.");
                                 leftAttempts--;
 
@@ -249,7 +249,7 @@ namespace Project___The_Bank;
                                     Console.WriteLine($"Too many wrong attempts! Please wait 3 minutes and try again, Authentication hold starts at {DateTime.Now}");
                                     // Will delay for 180 seconds
                                     Thread.Sleep(3 * 60 * 1000);
-                                    Console.WriteLine($"You can try log in at {DateTime.Now}");
+                                Console.WriteLine($"You can try log in now {DateTime.Now}");
                                 Console.ReadKey();
                                     leftAttempts = 3;
                                 }

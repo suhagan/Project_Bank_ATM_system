@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Project___The_Bank
 {
 	public class TransactionHistory

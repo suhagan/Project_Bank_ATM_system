@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Transactions;
-
 
 namespace Project___The_Bank
 {
@@ -13,8 +11,7 @@ namespace Project___The_Bank
         public string PinCode { get; set; }
         public CurrencyType CurrencyType { get; set; }
 
-        private readonly List<Transaction> AllTransactions = new List<Transaction>();
-
+       
         public double AccountBalance
         {
             get
@@ -23,12 +20,14 @@ namespace Project___The_Bank
                 double accBalance = 0;
                 foreach (var item in AllTransactions)
                 {
-                    accBalance += item.Amount;
+                    accBalance += item.TransactionAmount;
                 }
 
                 return accBalance;
             }
         }
+
+        private readonly List<TransactionHistory> AllTransactions = new List<TransactionHistory>();
 
         private static int InitialAccountNumber = 1234567890; // initialinzing bank account number with 10 digit
 
@@ -44,6 +43,28 @@ namespace Project___The_Bank
             AccountType = accType;
             CurrencyType = currencyType;
             PinCode = pinCode;
+            //AccountBalance = initialBalance;
+
+            if (initialBalance >= 0)
+                MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+        }
+
+        public void MakeDeposit(double amount, DateTime date, string note)
+        {
+            if (amount < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "Deposite amount cannot be negative.");
+                Console.ReadKey();
+            }
+            else if (amount == 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "No amount to deposite.");
+                Console.ReadKey();
+            }
+
+            // adding a transaction history
+            var deposit = new TransactionHistory(amount, date, note);
+            AllTransactions.Add(deposit);
         }
 
         public void WithdrawMoney(double withdrawamount, DateTime date, string note)
@@ -51,21 +72,20 @@ namespace Project___The_Bank
 
             if (withdrawamount < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(withdrawamount), "You cannot withdraw a negative amount.");
+                throw new ArgumentOutOfRangeException(nameof(withdrawamount), "Sorry! You cannot withdraw a negative amount.");
+                //Console.ReadKey();
             }
 
-            if (withdrawamount == 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(withdrawamount), "Your desired withdraw amount cannot be 0 (zero).");
-            }
+            
 
             if (AccountBalance - withdrawamount < 0)
             {
-                throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+                throw new InvalidOperationException("Sorry! Not sufficient funds for this withdrawal");
+                //Console.ReadKey();
             }
 
             // adding a withdrawal as a new transaction
-            var withdrawal = new TransactionHistory(-withdrawamount, date, time, msg);
+            var withdrawal = new TransactionHistory(-withdrawamount, date, note);
             AllTransactions.Add(withdrawal);
         }
     }
@@ -82,6 +102,6 @@ namespace Project___The_Bank
 
     public enum CurrencyType
     {
-        SEK
+        SEK,
     }
 }

@@ -88,9 +88,9 @@ namespace Project___The_Bank;
                             while (menu)
                             {
                                 Console.WriteLine("\n\tChoose your desired operation: ");
-                                Console.WriteLine("\n\t[1] See your Accounts Info and Balances.");
+                                Console.WriteLine("\n\t[1] See Accounts Information and Balances");
                                 Console.WriteLine("\n\t[2] Transfer between Accounts");
-                                Console.WriteLine("\n\t[3] Withdraw money");
+                                Console.WriteLine("\n\t[3] Withdraw Amounts");
                                 Console.WriteLine("\n\t[4] Log out");
 
                                 Int32.TryParse(Console.ReadLine(), out int yourOption);

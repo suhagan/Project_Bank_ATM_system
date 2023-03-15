@@ -51,12 +51,12 @@ namespace Project___The_Bank
             if (amount < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Deposite amount cannot be negative.");
-                Console.ReadKey();
+                //Console.ReadKey();
             }
             else if (amount == 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "No amount to deposite.");
-                Console.ReadKey();
+               // Console.ReadKey();
             }
 
             // adding a transaction history

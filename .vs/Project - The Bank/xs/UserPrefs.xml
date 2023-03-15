@@ -1,4 +1,12 @@
 ﻿<Properties StartupConfiguration="{05370A8D-D7CD-4BF9-A541-04255DBA0BB0}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Project_220-_220The_220Bank PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/Suhagan/Projects/Project - The Bank/Project_Bank_ATM_system/Project - The Bank/Clients.cs" relfile="Project - The Bank/Clients.cs" line="10" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Project - The Bank/Program.cs">
     <Files>
       <File FileName="Project - The Bank/Transactions.cs" Line="10" Column="1" />
@@ -17,13 +25,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/Suhagan/Projects/Project - The Bank/Project_Bank_ATM_system/Project - The Bank/Clients.cs" relfile="Project - The Bank/Clients.cs" line="10" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Project_220-_220The_220Bank PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

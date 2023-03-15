@@ -14,24 +14,24 @@ namespace Project___The_Bank;
         /* ----- Creating new clients as individual objects of client's info ----- */
         
         Clients client1 = new Clients("Suhagan", "866547");
-        client1.AccountHolders.Add(new AccountsInfo(client1.ClientsID, 20000, AccountType.HomeSavings, CurrencyType.SEK));
-        client1.AccountHolders.Add(new AccountsInfo(client1.ClientsID, 15000, AccountType.CurrentAccount, CurrencyType.SEK));
+        client1.AccountHolders.Add(new AccountsInfo(client1.ClientsID, 20000, AccountType.HomeSavings, "6547", CurrencyType.SEK));
+        client1.AccountHolders.Add(new AccountsInfo(client1.ClientsID, 15000, AccountType.CurrentAccount, "8665", CurrencyType.SEK));
 
         Clients client2 = new Clients("Ashfaqul", "135694");
-        client2.AccountHolders.Add(new AccountsInfo(client2.ClientsID, 40000, AccountType.SavingsAccount, CurrencyType.SEK));
-        client2.AccountHolders.Add(new AccountsInfo(client2.ClientsID, 1000, AccountType.CurrentAccount, CurrencyType.SEK));
+        client2.AccountHolders.Add(new AccountsInfo(client2.ClientsID, 40000, AccountType.SavingsAccount, "5694", CurrencyType.SEK));
+        client2.AccountHolders.Add(new AccountsInfo(client2.ClientsID, 1000, AccountType.CurrentAccount, "1356", CurrencyType.SEK));
 
         Clients client3 = new Clients("Alex", "123456");
-        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 5000, AccountType.JointAccount, CurrencyType.SEK));
-        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 28000, AccountType.FundAccount, CurrencyType.SEK));
-        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 22000, AccountType.CurrentAccount, CurrencyType.SEK));
+        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 5000, AccountType.JointAccount, "3456", CurrencyType.SEK));
+        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 28000, AccountType.FundAccount, "1234", CurrencyType.SEK));
+        client3.AccountHolders.Add(new AccountsInfo(client3.ClientsID, 22000, AccountType.CurrentAccount, "2345", CurrencyType.SEK));
 
         Clients client4 = new Clients("Simon", "654778");
-        client4.AccountHolders.Add(new AccountsInfo(client4.ClientsID, 20000, AccountType.CurrentAccount, CurrencyType.SEK));
+        client4.AccountHolders.Add(new AccountsInfo(client4.ClientsID, 20000, AccountType.CurrentAccount, "4778", CurrencyType.SEK));
         
         Clients client5 = new Clients("Missouri", "126549");
-        client5.AccountHolders.Add(new AccountsInfo(client5.ClientsID, 67000, AccountType.SavingsAccount, CurrencyType.SEK));
-        client5.AccountHolders.Add(new AccountsInfo(client5.ClientsID, 29000, AccountType.CurrentAccount, CurrencyType.SEK));
+        client5.AccountHolders.Add(new AccountsInfo(client5.ClientsID, 67000, AccountType.SavingsAccount, "6549", CurrencyType.SEK));
+        client5.AccountHolders.Add(new AccountsInfo(client5.ClientsID, 29000, AccountType.CurrentAccount, "1265", CurrencyType.SEK));
 
 
         Clients[] Client = new Clients[]{ client1, client2, client3, client4, client5 }; // <<--- Creating array of clients
@@ -186,6 +186,9 @@ namespace Project___The_Bank;
 
                                             Console.WriteLine($"Enter Amount to withdraw: ");
                                             Double.TryParse(Console.ReadLine(), out Double amount);
+
+                                            bool tryAttempt = true;
+                                            int attemptCheck = 3;
 
                                             if (amount > 0)
                                             {

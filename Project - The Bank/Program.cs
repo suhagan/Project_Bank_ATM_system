@@ -174,56 +174,68 @@ namespace Project___The_Bank;
                                     break;
                                    
                                 case 3: // Withdrawal of amount
-                                    {
-                                        try //using try-catch to handle exceptions to prevent the program from crushing 
+                                    
+                                        bool tryAttempt = true;
+                                        int attemptCheck = 3; // number of attempts
+
+                                        while (tryAttempt)
                                         {
                                             Console.WriteLine("Choose account number, you want to withdraw amount from:");
-                                            for (int i = 0; i < SearchItem.AccountHolders.Count; i++)
+
+                                            try //using try-catch to handle exceptions to prevent the program from crushing 
                                             {
-                                                Console.WriteLine($"Enter {i + 1} for Acc/No: {SearchItem.AccountHolders[i].AccountNumber}, Acc/Balance: {SearchItem.AccountHolders[i].AccountBalance} {SearchItem.AccountHolders[i].CurrencyType}");
-                                            }
-                                            Int32.TryParse(Console.ReadLine(), out int withdrawFrom);
+                                                for (int i = 0; i < SearchItem.AccountHolders.Count; i++)
+                                                {
+                                                    Console.WriteLine($"Enter {i + 1} for Acc/No: {SearchItem.AccountHolders[i].AccountNumber}, Acc/Balance: {SearchItem.AccountHolders[i].AccountBalance} {SearchItem.AccountHolders[i].CurrencyType}");
+                                                }
 
-                                            Console.WriteLine($"Enter Amount to withdraw: ");
-                                            Double.TryParse(Console.ReadLine(), out Double amount);
+                                                Int32.TryParse(Console.ReadLine(), out int withdrawFrom);
 
-                                            bool tryAttempt = true;
-                                            int attemptCheck = 3;
+                                                Console.WriteLine($"Enter Amount to withdraw: ");
+                                                Double.TryParse(Console.ReadLine(), out Double amounttoWithdraw);
 
-                                            if (amount > 0)
+                                                Console.WriteLine("Please ENTER the Pin Code for withdrawal");
+                                                string insertedPin = Console.ReadLine();
+                                                attemptCheck--;
+
+                                                if(SearchItem.AccountHolders[withdrawFrom - 1].PinCode == insertedPin) //checking inserted pin code's validity
+                                                {
+                                                    //if inserted pin is matched
+                                                    Console.WriteLine("Pin code matched. Thanks for the confirmation.");
+
+                                                    if (amounttoWithdraw > 0)
+                                                    {
+                                                        SearchItem.AccountHolders[withdrawFrom - 1].WithdrawMoney(amounttoWithdraw, DateTime.Now, $"Withdrawn from account: Acc/No {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber}");
+                                                        Console.WriteLine($"{amounttoWithdraw} SEK has successfully withdrawn from Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber}");
+
+                                                        Console.WriteLine($"Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber} \tAcc/Balance: {SearchItem.AccountHolders[withdrawFrom - 1].AccountBalance} {SearchItem.AccountHolders[withdrawFrom - 1].CurrencyType}");
+                                                        Console.WriteLine("Press Enter to return to the operations menu.");
+                                                        Console.ReadKey();
+                                                    }
+
+                                                    if (amounttoWithdraw < 0)
+                                                    {
+                                                        Console.WriteLine("Withdraw amount cannot be negative.");
+                                                        Console.WriteLine("Press Enter to return to the operations menu.");
+                                                        Console.ReadKey();
+                                                    }
+
+                                                if (amount == 0)
+                                                {
+                                                    Console.WriteLine("No amount to withdraw.");
+                                                    Console.WriteLine("Press Enter to return to the operations menu.");
+                                                    Console.ReadKey();
+                                                }
+                                                {
+                                                }
+
+                                            catch (Exception ex)
                                             {
-                                                
-                                                SearchItem.AccountHolders[withdrawFrom - 1].WithdrawMoney(amount, DateTime.Now, $"Withdrawn from account: Acc/No {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber}");
-                                                
-                                                Console.WriteLine($"{amount} SEK has withdrawn from Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber}");
-
-                                                Console.WriteLine($"Acc/No: {SearchItem.AccountHolders[withdrawFrom - 1].AccountNumber} \tAcc/Balance: {SearchItem.AccountHolders[withdrawFrom - 1].AccountBalance} {SearchItem.AccountHolders[withdrawFrom - 1].CurrencyType}");
-                                                Console.WriteLine("Press Enter to return to the operations menu.");
-                                                Console.ReadKey();
-                                            }
-
-                                            if (amount < 0)
-                                            {
-                                                Console.WriteLine("Withdraw amount cannot be negative.");
-                                                Console.WriteLine("Press Enter to return to the operations menu.");
-                                                Console.ReadKey();
-                                            }
-
-                                            if (amount == 0)
-                                            {
-                                                Console.WriteLine("No amount to withdraw.");
-                                                Console.WriteLine("Press Enter to return to the operations menu.");
+                                                Console.WriteLine($"Withdrawal failed! \n{ex}");
                                                 Console.ReadKey();
                                             }
                                         }
-
-                                        catch (Exception ex)
-                                        {
-                                            Console.WriteLine($"Withdrawal failed! \n{ex}");
-                                            Console.ReadKey();
-                                        }
-                                    }
-                                    break;
+                                        break;
 
                                 case 4:
                                     

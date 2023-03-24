@@ -17,7 +17,7 @@ During planning and implementation, I have tried to touch the following ares:
 
 _Data and its representation_: I have tried to present the data in an organized way, so that in future any developer wants to take hints, or   use my work for further upgradation, will have a clear view of data. Usually this application has several clients, and individual clients have one to several accounts. 
     
-_Security_: A basic security has been introduced in this system. During the though process, I have added PinCode for every accounts to impose 3 attempts login in every single account instead of individual client login. Later, during the implementation phase, I have implemented that 3 attempts login only for Client Login level. Although they system will become strong with security, however it would not be a user friendly application, if it blocks in every level of client's accounts. It will be time consuming and user will be tiresum.
+_Security_: A basic security has been introduced in this system. I have added PinCode for every accounts to impose 3 attempts login try in every single account instead of individual client login whether to see details or transfer amount or even for a withdrawal. Later, during the implementation phase, I have implemented that 3 attempts login only for Client Login level and for withdrawal amount. Although they system will become strong with security, however it would not be a user friendly application, if it asks pin code in every level of accounts. It will be time consuming and user will be frustrated while operating the application.
     
 _Exception handling_: I have used "try - catch" for exception handling, so that the system will not crush.
     

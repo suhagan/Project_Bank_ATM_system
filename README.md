@@ -4,13 +4,13 @@ This is a project to develop a simple Bank/ATM system with basic functionalities
 # Features:
 This application has following active features:
 - _A Login Menu_: 
-       1) Client's Login: Through this, existing clients can log in to the app.
-       2) Exit: This will allow app user to terminate the program.
+       - 1) Client's Login: Through this, existing clients can log in to the app.
+       - 2) Exit: This will allow app user to terminate the program.
 - _Operations Menu_:
-      [1] See Accounts Information and Balances
-      [2] Transfer between Accounts
-      [3] Withdraw Amounts
-      [4] Log out
+      - [1] See Accounts Information and Balances
+      - [2] Transfer between Accounts
+      - [3] Withdraw Amounts
+      - [4] Log out
       
 # Planning and Implementation
 During planning and implementation, I have tried to touch the following ares: 
